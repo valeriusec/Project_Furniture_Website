@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Vantage";
+    src: url(/FONT/Vantage.ttf);
+}
+
+@font-face {
+    font-family: "Polonium";
+    src: url(/FONT/Polonium.otf);
+}
+
+@font-face {
+    font-family: "Polonium-Bold";
+    src: url(/FONT/Polonium-Bold.otf);
+}
+
+@font-face {
+    font-family: "Wild-World";
+    src: url(/FONT/WILD\ WORLD.otf);
+}
+
+@font-face {
+    font-family: "Grotesk-regular";
+    src: url(/FONT/OTF/HKGroteskWide-Regular.otf);
+}
+
+@font-face {
+    font-family: "Grotesk-bold";
+    src: url(/FONT/OTF/HKGroteskWide-Bold.otf);
+}
+
+:root {
+    --main-color-dark: #04151F;
+    --secondary-color-dark: #183A37;
+    --main-color-light: #7A6174;
+    --secondary-color-light: #D3D0CB;
+    --text-color: #FAFAFA;
+    --text-color-dark: #141414;
+}
+
+body {
+    width: 100%;
+}
+
+header {
+    overflow: hidden;
+}
+
+main {
+    height: 100vh;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+
+/*-----------------------*/
+
+/*HEADER SECTION CSS*/
+
+/*-----------------------*/
+
+
+/*NAV CSS*/
+
+nav {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+nav ul {
+    width: 75%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--main-color-dark);
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px var(--main-color-dark);
+}
+
+nav ul li {
+    list-style: none;
+    width: calc(100% / 6);
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav ul li a {
+    font-family: "Grotesk-bold", sans-serif;
+    font-size: 26px;
+    transition: all 0.6s;
+}
+
+.nav_icons {
+    width: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a:hover {
+    font-size: 28px;
+    transition: all 0.6s;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: var(--secondary-color-dark);
+}
+
+/*BANNER SECTION CSS*/
+
+.banner {
+    height: 100vh;
+    transform: scale(1.1);
+    animation: bounce 1.5s forwards;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.banner_container {
+    height: 100%;
+    width: 500px;
+    position: absolute;
+    left: -500px;
+    background-color: rgb( 4, 21, 31, 0.8);
+    z-index: 1;
+    animation: slide 1.5s forwards;
+    animation-delay: 1.5s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.marquee {
+    margin: 0 auto;
+    width: 12%;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    animation: slide 1.5s forwards;
+    animation-delay: 1.5s;
+}
+  
+.marquee span {
+    display: inline-block;
+    animation: marquee 12s linear infinite;
+    font-family: "Wild-World", sans-serif;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    color: var(--text-color);
+    font-size: 60px;
+    transition: all 2s;
+    cursor: default;
+}
+  
+.marquee2 span {
+    animation-delay: 6s;
+    transform: translate(0, -100%);
+}
+
+.banner_container_text {
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12%;
+}
+
+.banner_container_text span {
+    font-family: "Vantage", sans-serif;
+    font-size: 100px;
+    color: var(--secondary-color-dark);
+}
+
+.banner_container_text p {
+    padding: 0 30px;
+    text-align: center;
+    color: var(--text-color);
+    font-family: "Grotesk-regular";
+    font-size: 20px;
+}
+
+.banner .banner_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    z-index: 0;
+    display: none;
+    animation: bounce 1.5s forwards;
+}
+
+.banner_text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    right: 250px;
+}
+
+.banner_text span {
+    font-family: "Wild-World", sans-serif;
+    font-size: 80px;
+    color: var(--main-color-dark);
+    text-align: right;
+    animation: fade 1.5s forwards;
+    cursor: default;
+}
+
+.banner_text span:nth-child(2), span:nth-child(4) {
+    color: var(--secondary-color-dark);
+}
+
+.banner_text span:nth-child(2) {
+    opacity: 0;
+    animation-delay: 0.4s;
+}
+
+.banner_text span:nth-child(3) {
+    opacity: 0;
+    animation-delay: 0.8s;
+}
+
+.banner_text span:nth-child(4) {
+    opacity: 0;
+    animation-delay: 1.2s;
+}
+
+/*KEYFRAMES*/
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes bounce {
+    100% { transform: scale(1.0) }
+}
+
+@keyframes marquee {
+    0% {
+      transform: translate(0, -100%);
+    }
+    100% {
+      transform: translate(0, 100%);
+    }
+}
+
+@keyframes fade {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes fade-in {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
