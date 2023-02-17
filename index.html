@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.0/model-viewer.min.js"></script>
     <script src="https://kit.fontawesome.com/c3b56a7551.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/CSS/style.css">
 </head>
@@ -49,7 +50,21 @@
             </div>
         </div>
     </header>
-    <main></main>
+    <main>
+        <div class="main_container" id="main_section_3d">
+            <div class="product_description">
+                <h2>Handcrafted Wooden Bedside Table</h2>
+                <p>Add a touch of elegance to your bedroom with this beautiful wooden bedside table. Handcrafted from high-quality wood, this table features a classic design that will complement any decor. The table top provides ample space for a lamp, books, or other bedside essentials, while the handy drawer offers additional storage for your personal items.</p>
+
+                <p>Crafted by skilled artisans, this bedside table is made to last and will be a treasured addition to your home. The natural wood grain adds character and charm to the piece, while the smooth finish gives it a sleek and sophisticated look. The compact size makes it perfect for smaller spaces, and the sturdy construction ensures it can withstand daily use.</p>
+                    
+                <p>Whether you're looking for a practical and stylish addition to your bedroom or simply want to add a touch of warmth and character to your home, this wooden bedside table is the perfect choice. With its timeless design and quality craftsmanship, it's sure to be a favorite for years to come.</p>
+            </div>
+            <div class="model_container" id="container3d">
+                <model-viewer class="model" id="orbit-demo" src="/3DMODELS/bedside_table.glb" ar ar-modes="webxr" ar-scale="fixed" shadow-intensity="2.5" disable-zoom camera-orbit="calc(-1rad + calc(env(window-scroll-y) - 100%) * 2.5rad) 80deg 100%"></model-viewer>
+            </div>
+        </div>
+    </main>
     <footer></footer>
 </body>
 <script src="/JS/animations.js"></script>
